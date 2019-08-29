@@ -8,29 +8,37 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css"
     integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="assets/style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <title>myTunes</title>
 </head>
 
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
+<body class="background">
+  <div class="container-fluid text-white">
+    <h1 class="row text-center justify-content-around" style="height: 75px"><b>myTunes</b></h1>
+    <div class="row justify-content-between">
+      <div class="col-4">
         <form onsubmit="app.controllers.songController.search(event)">
           <div class="form-group row">
             <input type="text" class="form-control" name="query" placeholder="Search Term">
-            <button class="btn btn-outline-success mt-1 form-control" type="submit">Search</button>
+            <button class="btn btn-success mt-1 form-control" type="submit">Search</button>
           </div>
         </form>
-
+      </div>
+      <div class="col-4">
+        <h1><u>My Songs</u></h1>
       </div>
     </div>
 
-    <div id="songs" class="row">
-      <!-- template to generate -->
-
+    <div class="row justify-content-between">
+      <div class="col-4" id="songs">
+        <!-- template to generate -->
+      </div>
+      <div class="col-4">
+        <!-- playlist to generate -->
+      </div>
     </div>
   </div>
+
 
 
 
@@ -38,7 +46,7 @@
   <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
     </script>
-  <script src="app/main.js" type="module"></script>
+  <script src="main.js" type="module"></script>
 </body>
 
 </html>
