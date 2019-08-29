@@ -1,5 +1,15 @@
 import Song from "../Models/Song.js";
 
+// @ts-ignore
+let _sandBoxApi = axios.create({
+  baseURL: 'http://bcw-sandbox.herokuapp.com/api/peyton/songs'
+})
+
+// @ts-ignore
+let _apiSongs = axios.create({
+  baseURL: "https://itunes.apple.com/search?callback=?&term="
+})
+
 //Private
 let _state = {
   apiSongs: [],
@@ -24,20 +34,18 @@ export default class SongService {
   get apiSongs() {
     return _state.apiSongs
   }
-
   get mySongs() {
     return _state.mySongs
   }
 
   getApiSongs() {
-    _apiSongs.get()
+    _sandBoxApi.get()
       .then(res => {
         _setState("apiSongs", res.data)
       })
   }
-
   getMySongs() {
-    _mySongs.get()
+    _sandBoxApi.get()
       .then(res => {
         _setState("mySongs", res.data)
       })
