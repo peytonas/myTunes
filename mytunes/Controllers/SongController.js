@@ -5,14 +5,9 @@ let _songService = new SongService()
 
 function _draw() {
   let elem = document.getElementById('songs')
-  let mySongs = _songService.mySongs
-  let apiSongs = _songService.apiSongs
-
+  let songs = _songService.Songs
   let template = '<ul>'
-  mySongs.forEach(s => {
-    template += s.Template
-  })
-  apiSongs.forEach(s => {
+  songs.forEach(s => {
     template += s.Template
   })
   elem.innerHTML = template + '</ul>'

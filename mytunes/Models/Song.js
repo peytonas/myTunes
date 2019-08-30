@@ -2,7 +2,7 @@ export default class Song {
   constructor(data) {
     this._id = data._id
     this.title = data.trackName
-    this.albumArt = data.artworkUrl100.replace(/100x10 0/g, "300x300")
+    this.albumArt = data.artworkUrl100.replace(/100x100/g, "300x300")
     this.artist = data.artistName
     this.collection = data.collectionName
     this.price = data.trackPrice
